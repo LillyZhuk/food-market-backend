@@ -18,19 +18,13 @@ mongoose.set('toJSON', {
 const PORT = process.env.PORT || 8080;
 app.use(routes);
 
-// mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/mydatabase')
-//   .then(
-//     () => {
-//       console.log('MongoDB connected!');
-//       app.listen(PORT, () => {
-//         console.log(`Listening on ${PORT}`);
-//       })
-//     }
-//   )
-//   .catch(err => console.error('MongoDB connection error:', err));
-//
-// export default () => {
-  app.listen(PORT, () => {
-    console.log(`Listening on ${PORT}`);
-  })
-// }
+mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/foodmarketdb')
+  .then(
+    () => {
+      console.log('MongoDB connected!');
+      app.listen(PORT, () => {
+        console.log(`Listening on ${PORT}`);
+      })
+    }
+  )
+  .catch(err => console.error('MongoDB connection error:', err));

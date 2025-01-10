@@ -48,4 +48,8 @@ export enum SubCategory {
   FRUIT = "FRUIT",
   MEAT = "MEAT",
   FISH = "FISH",
+  BAKERY = 'BAKERY',
+  SPECIALNUTRITION = 'SPECIALNUTRITION',
+  DRINKS = 'DRINKS',
+  KITCHEN = 'KITCHEN',
 }
