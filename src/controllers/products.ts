@@ -5,7 +5,14 @@ import product from '../models/product';
 
 const getAllProducts = async (req: Request, res: Response) => {
   try {
-    const products = await ProductModel.find();
+    const category = req.query.category;
+    let products;
+    if (category) {
+      products = await ProductModel.find({category});
+    } else {
+      products = await ProductModel.find();
+    }
+
     res.status(200).json(products);
   } catch (error) {
     res.status(500).json({
@@ -23,7 +30,6 @@ const createProduct = async (req: ExpressRequest, res: Response) => {
     updatedBy: req.user?.username,
   });
   try {
-    // console.log(product);
     const newProduct = await product.save();
     res.status(201).json(newProduct);
   } catch (error) {

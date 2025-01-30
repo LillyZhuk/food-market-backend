@@ -12,6 +12,7 @@ const productSchema = new Schema<ProductDocument>({
   freshness: { type: Number, required: false, default: 0 },
   buyBy: { type: [String], required: true },
   deliveryDays: { type: Number, required: false, default: 0 },
+  deliveryCoast: { type: Number, required: false, default: 0 },
   deliveryAria: { type: String, required: true },
   maxKgs: { type: Number, required: false, default: 0 },
   description: { type: String, required: true },
