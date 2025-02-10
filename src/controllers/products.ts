@@ -21,6 +21,23 @@ const getAllProducts = async (req: Request, res: Response) => {
   }
 }
 
+const getProductById = async (req: Request, res: Response) => {
+  try {
+    const product = await ProductModel.findById(req.params.id);
+    if (!product) {
+      res.status(404).json({
+        error: 'Product not found',
+      });
+      return;
+    }
+    res.status(200).json(product);
+  } catch (error) {
+    res.status(500).json({
+      error: 'Something went wrong',
+    });
+  }
+}
+
 const createProduct = async (req: ExpressRequest, res: Response) => {
   const product = new ProductModel({
     ...req.body,
@@ -43,5 +60,6 @@ const createProduct = async (req: ExpressRequest, res: Response) => {
 
 export default {
   getAllProducts,
+  getProductById,
   createProduct
 }
