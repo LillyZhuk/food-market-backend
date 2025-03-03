@@ -149,7 +149,6 @@ const getFavoriteProductsByUser = async (req: ExpressRequest, res: Response) => 
   const pageSize = Number(req.query.pageSize) || 10;
   const currentPage = Number(req.query.page) || 1;
   try {
-    const userId = req.user?.id;
     const filter = { favorites: req.user?.id };
 
     const products = await ProductModel.find(filter)
