@@ -125,14 +125,22 @@ const updateUser = async (req: ExpressRequest, res: Response) => {
 // todo add description to postman
 // todo add filter for users by name or lastname
 const getUsersList = async (req: ExpressRequest, res: Response) => {
+  const pageSize = Number(req.query.pageSize) || 10;
+  const currentPage = Number(req.query.page) || 1;
+  const filter = { role: UserRole.USER };
   try {
-    if (!req.user) {
-      res.status(401).json({ error: 'Unauthorized' });
-      return;
-    }
+    const users = await UserModel.find(filter)
+      .skip((currentPage - 1) * pageSize)
+      .limit(pageSize);
+    const count = await UserModel.countDocuments(filter);
 
-    const users = await UserModel.find({ role: UserRole.USER });
-    res.status(200).json(users);
+    res.status(200).json({
+      totalItems: count,
+      totalPages: Math.ceil(count / pageSize),
+      currentPage,
+      pageSize,
+      results: users
+    });
   } catch (err) {
     handleErrors(err, res)
   }

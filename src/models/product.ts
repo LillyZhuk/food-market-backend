@@ -1,4 +1,4 @@
-import { model, Schema } from 'mongoose';
+import { model, Schema, Types } from 'mongoose';
 import { Category, ProductDocument, Stoke, SubCategory } from '../types/product';
 
 const productSchema = new Schema<ProductDocument>({
@@ -23,6 +23,7 @@ const productSchema = new Schema<ProductDocument>({
   createdBy: { type: String, required: true },
   updatedAt: { type: Date, default: Date.now, required: true },
   updatedBy: { type: String, required: true },
+  favorites: [{ type: Types.ObjectId, ref: 'User', select: false }],
 });
 
 export default model<ProductDocument>('Product', productSchema);

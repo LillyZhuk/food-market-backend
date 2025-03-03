@@ -4,8 +4,9 @@ const products =   [
   {
     "name": "Fresh Atlantic Salmon",
     "image": [
-      "https://example.com/images/salmon1.jpg",
-      "https://example.com/images/salmon2.jpg"
+      "https://allfreshseafood.com/cdn/shop/files/2salmonfilletscanadian_1.jpg?v=1698852411",
+      "https://www.samuelsseafood.com/wp-content/uploads/2016/11/Wild-Isle-whole-and-side-fillet-1.jpg",
+      "https://m.media-amazon.com/images/I/817y+lN3ohL.jpg"
     ],
     "price": 15.99,
     "SKU": 10067890,
@@ -30,7 +31,11 @@ const products =   [
   },
   {
     "name": "Organic Bananas",
-    "image": ["https://example.com/images/banana1.jpg"],
+    "image": [
+      "https://www.chiquita.com/wp-content/uploads/2020/01/Chiquita_Organicsbananas_US_Yellow.jpg",
+      "https://www.melissas.com/cdn/shop/products/image-of-organic-bananas-organics-14763756421164_600x600.jpg?v=1616958064",
+      "https://spud-res.cloudinary.com/w_600/f_auto,q_auto,c_fill,w_600,e_improve:30,e_sharpen:60/spudca/Products/Bananas_Overripe_Imperfect_SI556600.jpg"
+    ],
     "price": 2.99,
     "SKU": 10012345,
     "category": "FRUITANDVEGETABLES",
@@ -55,8 +60,9 @@ const products =   [
   {
     "name": "Artisanal Whole Grain Bread",
     "image": [
-      "https://example.com/images/bread1.jpg",
-      "https://example.com/images/bread2.jpg"
+      "https://ogden_images.s3.amazonaws.com/www.motherearthnews.com/images/2009/10/22112512/2009-12-dec-jan-artisan-bread-jpg.jpg",
+      "https://bigoven-res.cloudinary.com/image/upload/f_auto,q_auto/t_recipe-1280/artisan-whole-grain-bread-reci-42b494.jpg",
+      "https://joybileefarm.com/wp-content/uploads/2013/10/Multi-Grain-Artisan-Bread-in-5-Minutes-crop-feat-im.jpg"
     ],
     "price": 4.50,
     "SKU": 10054321,
@@ -82,8 +88,9 @@ const products =   [
   {
     "name": "Organic Baby Spinach",
     "image": [
-      "https://example.com/images/spinach1.jpg",
-      "https://example.com/images/spinach2.jpg"
+      "https://www.earthboundfarm.com/wp-content/uploads/2024/04/BabySpinach-Half-16oz-Mockup.jpg",
+      "https://www.earthboundfarm.com/wp-content/uploads/2024/04/32601900205_newlook.jpg",
+      "https://www.earthboundfarm.com/wp-content/uploads/2024/03/EBF-Baby-Spinach-5oz-Fiber-Less-Plastic-1.webp"
     ],
     "price": 3.99,
     "SKU": 10123456,
@@ -107,10 +114,11 @@ const products =   [
     "updatedBy": "Admin2"
   },
   {
-    "name": "Raw Organic Honey",
+    "name": "Raw Honey",
     "image": [
-      "https://example.com/images/honey1.jpg",
-      "https://example.com/images/honey2.jpg"
+      "https://beeconservation.org.uk/cdn/shop/products/Honey-in-jar-with-honey-dipper-honeycomb-and-lavender-flowers-on-the-side.jpg?v=1520255279",
+      "https://terrapowders.com/cdn/shop/files/16ozFrontNatureNate_sHoneyCo100_PureAsNatureIntended_1445x.jpg?v=1682362056",
+      "https://media.post.rvohealth.io/wp-content/uploads/sites/3/2024/09/raw-honey-732x549-thumbnail.jpg"
     ],
     "price": 12.99,
     "SKU": 10134567,
@@ -136,7 +144,9 @@ const products =   [
   {
     "name": "Fresh Chicken Breast",
     "image": [
-      "https://example.com/images/chicken1.jpg"
+      "https://131263712.cdn6.editmysite.com/uploads/1/3/1/2/131263712/s972748746574077376_p71_i1_w2560.jpeg?width=2400&optimize=medium",
+      "https://ldameatsltd.co.uk/wp-content/uploads/2023/07/Fresh-Chicken-Fillets.jpg",
+      "https://wholesalemeatscoventry.co.uk/wp-content/uploads/2020/12/CMW-18.jpg"
     ],
     "price": 8.49,
     "SKU": 10145678,
@@ -162,7 +172,9 @@ const products =   [
   {
     "name": "Organic Almond Milk",
     "image": [
-      "https://example.com/images/almondmilk1.jpg"
+      "https://cdn.perishablenews.com/2023/01/a-dar4.jpg",
+      "https://www.instacart.com/assets/domains/product-image/file/large_c7ccc745-8ede-48df-98b0-0e3aed467938.jpg",
+      "https://www.califiafarms.com/static/7cf26892e29668a2c0247ee39af29dd8/d65af/Califia-Farms_Lindseyeats_White_Chili_Unsweetened_Almondmilk_Recipe-Shot_2023_1-4.jpg"
     ],
     "price": 4.99,
     "SKU": 10156789,
@@ -188,7 +200,9 @@ const products =   [
   {
     "name": "Farm Fresh Organic Eggs",
     "image": [
-      "https://example.com/images/eggs1.jpg"
+      "https://m.media-amazon.com/images/I/61F6Ks9j1KL._AC_UF894,1000_QL80_.jpg",
+      "https://www.beverlybees.com/wp-content/uploads/2024/04/Screenshot_20240607_122500_Instagram.jpg",
+      "https://playflightfarmbakery.com/cdn/shop/products/playflight_eggs_1200x1200.jpg?v=1652992343"
     ],
     "price": 6.50,
     "SKU": 10167890,
@@ -212,10 +226,11 @@ const products =   [
     "updatedBy": "Admin2"
   },
   {
-    "name": "Organic Herbal Tea",
+    "name": "Herbal Tea",
     "image": [
-      "https://example.com/images/herbaltea1.jpg",
-      "https://example.com/images/herbaltea2.jpg"
+      "https://m.media-amazon.com/images/I/61rtYVGbpDL._AC_UF894,1000_QL80_.jpg",
+      "https://www.pravek.com/cdn/shop/articles/Herbal-Tea-benfits.jpg?v=1699680718",
+      "https://www.goldentipstea.com/cdn/shop/articles/blog-GTHT_800x.png?v=1634820834"
     ],
     "price": 5.99,
     "SKU": 10189012,
@@ -241,8 +256,9 @@ const products =   [
   {
     "name": "Premium Grass-Fed Beef Steak",
     "image": [
-      "https://example.com/images/beef1.jpg",
-      "https://example.com/images/beef2.jpg"
+      "https://grassrunfarms.com/wp-content/uploads/2021/09/P_Prime-caseready_ribeye-steak.jpg",
+      "https://perennialpasturesranch.com/cdn/shop/files/5_5598b23b-52b9-4340-b2b0-32987b839830.png?v=1710977878",
+      "https://www.tastyfoodaffair.com/cdn/shop/files/young-prime-grass-fed-striploin-steak-246604_800x.jpg?v=1731055500"
     ],
     "price": 18.99,
     "SKU": 10200123,
@@ -268,7 +284,9 @@ const products =   [
   {
     "name": "Organic Chicken Thighs",
     "image": [
-      "https://example.com/images/chicken-thighs1.jpg"
+      "https://i5.walmartimages.com/seo/Freshness-Guaranteed-Boneless-Skinless-Chicken-Thighs-2-75-4-0-lb-Tray_8d322aa9-8df3-4777-8ee4-7eab035867dc.8f0b38d12ee415368873227f44d30c6a.jpeg",
+      "https://alinggemma.com/cdn/shop/products/ChickenThigh_800x800px.png?v=1637140842",
+      "https://static01.nyt.com/images/2024/01/04/multimedia/LH-Baked-Chicken-Thighs-hzgq/LH-Baked-Chicken-Thighs-hzgq-mediumSquareAt3X.jpg"
     ],
     "price": 7.49,
     "SKU": 10200234,
@@ -294,7 +312,9 @@ const products =   [
   {
     "name": "Wild-Caught Salmon Fillets",
     "image": [
-      "https://example.com/images/salmon-fillets1.jpg"
+      "https://images.albertsons-media.com/is/image/ABS/960122401?$ng-ecom-pdp-mobile$&defaultImage=Not_Available",
+      "https://wildalaskasalmonandseafood.com/wp-content/uploads/2021/05/kingrawb17.jpg",
+      "https://wildalaskasalmonandseafood.com/wp-content/uploads/2021/05/Sockeye-Samon-Fillet_1000x628.jpg"
     ],
     "price": 14.99,
     "SKU": 10200345,
@@ -320,7 +340,9 @@ const products =   [
   {
     "name": "Frozen Tilapia Fillets",
     "image": [
-      "https://example.com/images/tilapia1.jpg"
+      "https://i5.walmartimages.com/seo/Great-Value-Frozen-Tilapia-Skinless-Boneless-Fillets-2-lb-Bag_5414ca23-01a6-423e-9582-5714f29683bb.003faad4868b422fa265412e7e77c14c.jpeg",
+      "https://chefsbox.net/cdn/shop/products/tilapiafilet_800x.jpg?v=1618586288",
+      "https://chefsfreshfish.com/cdn/shop/products/DSC_0384.jpg?v=1588883838"
     ],
     "price": 5.99,
     "SKU": 10200456,
@@ -346,7 +368,9 @@ const products =   [
   {
     "name": "Fresh Broccoli",
     "image": [
-      "https://example.com/images/broccoli1.jpg"
+      "https://bragafresh.com/wp-content/uploads/2022/01/12oz-BF-Broccoli-Florets-Front-1242x1242-c-default.jpg",
+      "https://www.allrecipes.com/thmb/01OsKBnYA8USlkV4Mqm6543C9fo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-691088799-2000-16d197c7cb4e4c48bb518e3931f52a98.jpg",
+      "https://www.elizabethrider.com/wp-content/uploads/2020/11/How-to-Cook-Broccoli-Chart.jpg"
     ],
     "price": 2.99,
     "SKU": 10200567,
@@ -372,7 +396,9 @@ const products =   [
   {
     "name": "Organic Carrots",
     "image": [
-      "https://example.com/images/carrots1.jpg"
+      "https://calorganicfarms.com/wp-content/uploads/2018/01/IMG_6239_rainbow_bunch.jpg",
+      "https://calorganicfarms.com/wp-content/uploads/2017/10/Bunch-Carrots.jpg",
+      "https://www.nutriharvest.com/cdn/shop/articles/carrots2_94041803-d158-41d7-8db2-57e6f2a1bb88.png?v=1712253710&width=1100"
     ],
     "price": 3.49,
     "SKU": 10200678,
@@ -396,9 +422,11 @@ const products =   [
     "updatedBy": "Admin"
   },
   {
-    "name": "Organic Carrots",
+    "name": "Baby Carrots",
     "image": [
-      "https://example.com/images/carrots1.jpg"
+      "https://cdn11.bigcommerce.com/s-rl94rv7pw2/images/stencil/1280x1280/products/792/819/thumbnail__48239.1736809262.png?c=1",
+      "https://www.allrecipes.com/thmb/VVOYE0eLa_0kcZXbsDqT-wnFI1U=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/107344-sweet-baby-carrots-DDMFS-4x3-a436e66e64de4901a13b66bf6cfba119.jpg",
+      "https://www.foodnetwork.com/content/dam/images/food/fullset/2003/9/22/0/tm1a28_baby_carrots.jpg"
     ],
     "price": 3.49,
     "SKU": 10200678,
@@ -413,7 +441,7 @@ const products =   [
     "deliveryAria": "Nationwide",
     "maxKgs": 15,
     "description": "Sweet and crunchy organic carrots.",
-    "detailDescription": "Ideal for snacking or cooking, our organic carrots are naturally grown and pesticide-free.",
+    "detailDescription": "Grown on organic farms, these baby carrots are naturally sweet and packed with vitamins, making them a healthy choice for any meal.",
     "rate": 4.7,
     "tax": 3,
     "createdAt": "2025-01-04T10:00:00.000Z",
@@ -424,7 +452,9 @@ const products =   [
   {
     "name": "Tropical Mangoes",
     "image": [
-      "https://example.com/images/mangoes1.jpg"
+      "https://www.pittmandavis.com/images/xl/red-mangos-delivered-051923.webp?v=2",
+      "https://www.pittmandavis.com/images/l/PD24-FloridaMangoes.jpg?v=1",
+      "https://www.pittmandavis.com/images/xl/PD24-TropicalMangoes_02.webp?v=1"
     ],
     "price": 7.99,
     "SKU": 10200890,
@@ -445,6 +475,202 @@ const products =   [
     "createdAt": "2025-01-04T14:00:00.000Z",
     "createdBy": "Admin",
     "updatedAt": "2025-01-07T16:00:00.000Z",
+    "updatedBy": "Admin"
+  },
+  {
+    "name": "Coconut Milk",
+    "image": [
+      "https://thevegangrocer.com.ph/cdn/shop/files/61516EF2-1D82-4967-98A2-DAC1BCE9A10A.png?v=1720106759",
+      "https://vaya.in/recipes/wp-content/uploads/2019/01/Coconut-Milk.jpg",
+      "https://elavegan.com/wp-content/uploads/2016/08/Homemade-coconut-milk-recipe-500x500.jpg"
+    ],
+    "price": 4.99,
+    "SKU": 10300222,
+    "category": "DRINKS",
+    "subcategory": "DRINKS",
+    "farm": "Nature's Best Dairy",
+    "stoke": "INSTOCK",
+    "freshness": 14,
+    "buyBy": ["Bottle"],
+    "deliveryDays": 2,
+    "deliveryCoast": 1.5,
+    "deliveryAria": "Nationwide",
+    "maxKgs": 5,
+    "description": "Rich and creamy organic coconut milk, perfect for cooking and beverages..",
+    "detailDescription": "Made from freshly pressed organic coconuts, this coconut milk is a great dairy-free alternative, ideal for curries, soups, smoothies, and desserts.",
+    "rate": 3.8,
+    "tax": 3,
+    "createdAt": "2025-01-05T12:00:00.000Z",
+    "createdBy": "Admin",
+    "updatedAt": "2025-01-07T13:00:00.000Z",
+    "updatedBy": "Admin"
+  },
+  {
+    "name": "Gluten-Free Protein Bar - Aloha",
+    "image": [
+      "https://rembrandt.ownit.co/p0kZnQdMqPdrabSKi2q7m.png?width=750&format=jpeg&quality=70&bgcolor=white",
+      "https://m.media-amazon.com/images/I/91-wdLUvmlL._AC_UF1000,1000_QL80_.jpg",
+      "https://m.media-amazon.com/images/I/81KPdYMgDOL.jpg"
+    ],
+    "price": 2.99,
+    "SKU": 10300444,
+    "category": "SPECIALNUTRITION",
+    "subcategory": "SPECIALNUTRITION",
+    "farm": "Healthy Bites",
+    "stoke": "INSTOCK",
+    "freshness": 60,
+    "buyBy": ["Piece"],
+    "deliveryDays": 3,
+    "deliveryCoast": 1.0,
+    "deliveryAria": "Nationwide",
+    "maxKgs": 30,
+    "description": "Delicious and nutritious gluten-free protein bar.",
+    "detailDescription": "Packed with high-quality protein and fiber, perfect for a quick energy boost.",
+    "rate": 2.5,
+    "tax": 4,
+    "createdAt": "2025-01-03T10:00:00.000Z",
+    "createdBy": "Admin",
+    "updatedAt": "2025-01-07T11:00:00.000Z",
+    "updatedBy": "Admin"
+  },
+  {
+    "name": "Organic Turmeric Powder",
+    "image": [
+      "https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/nav/nav02132/y/14.jpg",
+      "https://domf5oio6qrcr.cloudfront.net/medialibrary/15065/conversions/fa246ce0-054b-4892-bf30-5eb43cd938aa-thumb.jpg",
+      "https://5.imimg.com/data5/SELLER/Default/2021/6/LB/YH/DT/102620522/turmeric-500x500.jpg"
+    ],
+    "price": 5.99,
+    "SKU": 10300666,
+    "category": "SPECIALNUTRITION",
+    "subcategory": "SPECIALNUTRITION",
+    "farm": "Spice World",
+    "stoke": "INSTOCK",
+    "freshness": 365,
+    "buyBy": ["Pack"],
+    "deliveryDays": 3,
+    "deliveryCoast": 1.5,
+    "deliveryAria": "Nationwide",
+    "maxKgs": 20,
+    "description": "Premium organic turmeric powder with high curcumin content.",
+    "detailDescription": "Sourced from certified organic farms, our turmeric powder adds flavor and health benefits to your meals.",
+    "rate": 4,
+    "tax": 3,
+    "createdAt": "2025-01-08T10:00:00.000Z",
+    "createdBy": "Admin",
+    "updatedAt": "2025-01-09T12:00:00.000Z",
+    "updatedBy": "Admin"
+  },
+  {
+    "name": "Pure Desi Ghee",
+    "image": [
+      "https://pureticks.com/wp-content/uploads/2024/10/Desi-Ghee-2-2048-x-2048-scaled.jpg",
+      "https://vaya.in/news/wp-content/uploads/2019/03/ghee-2.jpg",
+      "https://media.istockphoto.com/id/1314481702/photo/frying-pan-and-bowl-with-ghee-butter-on-dark-wooden-table-flat-lay.jpg?s=612x612&w=0&k=20&c=c_veW6cpaw92oAykaRqNcCgYDifvdQzQR2V0HDlvVPo="
+    ],
+    "price": 12.99,
+    "SKU": 10300777,
+    "category": "SPECIALNUTRITION",
+    "subcategory": "SPECIALNUTRITION",
+    "farm": "Heritage Dairy",
+    "stoke": "EXPECTEDSOON",
+    "freshness": 180,
+    "buyBy": ["Jar"],
+    "deliveryDays": 5,
+    "deliveryCoast": 2.0,
+    "deliveryAria": "Nationwide",
+    "maxKgs": 15,
+    "description": "Traditional pure desi ghee made from grass-fed cow's milk.",
+    "detailDescription": "Slow-cooked and handcrafted, this ghee is rich in vitamins and ideal for cooking or Ayurvedic use.",
+    "rate": 3.5,
+    "tax": 5,
+    "createdAt": "2025-01-08T11:00:00.000Z",
+    "createdBy": "Admin",
+    "updatedAt": "2025-01-09T13:00:00.000Z",
+    "updatedBy": "Admin"
+  },
+  {
+    "name": "Premium Organic Granola with Dark Chocolate & Coconut Taste",
+    "image": [
+      "https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/npa/npa77198/v/11.jpg",
+      "https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/npa/npa77198/l/12.jpg",
+      "https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/ugc/20250207/d372e0b5-47bf-414a-beed-fc0414e7cb7f/l.jpeg"
+    ],
+    "price": 8.99,
+    "SKU": 10400555,
+    "category": "SPECIALNUTRITION",
+    "subcategory": "SPECIALNUTRITION",
+    "farm": "Organic Bites",
+    "stoke": "INSTOCK",
+    "freshness": 365,
+    "buyBy": ["Pack"],
+    "deliveryDays": 3,
+    "deliveryCoast": 2.0,
+    "deliveryAria": "Nationwide",
+    "maxKgs": 15,
+    "description": "Indulgent organic granola with Fair Trade dark chocolate and coconut flakes.",
+    "detailDescription": "Crafted with whole grain oats, Fair Trade dark chocolate chunks, and creamy shredded coconut, this premium granola is a perfect blend of crunch and flavor. USDA Organic, Non-GMO, and Fair Trade Certified, it's a guilt-free indulgence that supports sustainable farming and responsible sourcing. Enjoy it as a snack, with yogurt, or as a topping for smoothie bowls.",
+    "rate": 4.9,
+    "tax": 3,
+    "createdAt": "2025-01-15T09:00:00.000Z",
+    "createdBy": "Admin",
+    "updatedAt": "2025-01-16T11:00:00.000Z",
+    "updatedBy": "Admin"
+  },
+  {
+    "name": "California Gold Nutrition, Superfoods, Organic Chia Seeds",
+    "image": [
+      "https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/cgn/cgn01217/v/26.jpg",
+      "https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/cgn/cgn01217/l/27.jpg",
+      "https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/cgn/cgn01217/l/23.jpg"
+    ],
+    "price": 6.99,
+    "SKU": 10500234,
+    "category": "SPECIALNUTRITION",
+    "subcategory": "SPECIALNUTRITION",
+    "farm": "California Gold Nutrition",
+    "stoke": "INSTOCK",
+    "freshness": 180,
+    "buyBy": ["Pack"],
+    "deliveryDays": 3,
+    "deliveryCoast": 1.5,
+    "deliveryAria": "Nationwide",
+    "maxKgs": 20,
+    "description": "Nutrient-rich organic chia seeds, perfect for smoothies, baking, and more.",
+    "detailDescription": "Packed with omega-3 fatty acids, fiber, and protein, these organic chia seeds are a superfood staple. They can be blended into shakes, sprinkled over yogurt or oatmeal, or used in baking for a healthy boost. USDA Organic and Non-GMO, they offer clean nutrition for your daily wellness. Store in a cool, dry place and use within 6 months after opening.",
+    "rate": 4.8,
+    "tax": 3,
+    "createdAt": "2025-01-18T08:00:00.000Z",
+    "createdBy": "Admin",
+    "updatedAt": "2025-01-19T10:00:00.000Z",
+    "updatedBy": "Admin"
+  },
+  {
+    "name": "Gerber, Cereal for Baby, Grain & Grow, 8+ Months, Oatmeal Banana Strawberry",
+    "image": [
+      "https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/gbr/gbr07031/v/28.jpg",
+      "https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/gbr/gbr07031/l/26.jpg",
+      "https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/gbr/gbr07031/l/23.jpg"
+    ],
+    "price": 5.49,
+    "SKU": 10600321,
+    "category": "BABY",
+    "subcategory": "BABY",
+    "farm": "Gerber",
+    "stoke": "INSTOCK",
+    "freshness": 30,
+    "buyBy": ["Pack"],
+    "deliveryDays": 2,
+    "deliveryCoast": 1.0,
+    "deliveryAria": "Nationwide",
+    "maxKgs": 10,
+    "description": "Nutritious oatmeal cereal with banana and strawberry for babies 8+ months.",
+    "detailDescription": "Gerber's Grain & Grow oatmeal cereal is made with whole grains and enriched with iron to support brain development. Featuring real banana flakes and strawberry bits, this cereal introduces new tastes and textures for growing babies. Non-GMO, kosher, and easy to prepare—just add liquid and serve. Store in a cool, dry place and use within 30 days after opening.",
+    "rate": 4.7,
+    "tax": 2,
+    "createdAt": "2025-01-20T09:00:00.000Z",
+    "createdBy": "Admin",
+    "updatedAt": "2025-01-21T11:00:00.000Z",
     "updatedBy": "Admin"
   }
 ];

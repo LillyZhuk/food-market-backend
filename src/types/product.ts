@@ -23,6 +23,7 @@ export interface Product {
   createdBy: string;
   updatedAt: Date;
   updatedBy: string;
+  favorites: string[];
 }
 
 export interface ProductDocument extends Product, Document {}
