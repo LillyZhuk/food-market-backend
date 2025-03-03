@@ -6,8 +6,8 @@ import { Category, SubCategory } from '../types/product';
 
 const getAllProducts = async (req: Request, res: Response) => {
   // pagination
-  const pageSize = Number(req.query.pageSize) || 10;
-  const currentPage = Number(req.query.page) || 1;
+  const pageSize = Number(req.query.pageSize) || null;
+  const currentPage = Number(req.query.page) || null;
 
   // filtering
   const category = req.query.category;
@@ -33,7 +33,7 @@ const getAllProducts = async (req: Request, res: Response) => {
     }
 
     if (subcategory) {
-      if (!Object.values(SubCategory).includes(category as SubCategory)) {
+      if (!Object.values(SubCategory).includes(subcategory as SubCategory)) {
         res.status(400).json({
           error: 'Invalid subcategory',
           message: 'SubCategory must be one of the following: ' + Object.values(SubCategory).join(', '),
@@ -47,7 +47,7 @@ const getAllProducts = async (req: Request, res: Response) => {
     if (priceMin !== null || priceMax !== null) {
       if (priceMin && priceMin < 0) {
         res.status(400).json({
-          error: 'Invalid parameters',
+          error: 'Invalid price params',
           message: 'priceMin must be at least 0',
         });
         return;
@@ -60,7 +60,7 @@ const getAllProducts = async (req: Request, res: Response) => {
 
     if (rateMin < 0 || rateMax > 5) {
       res.status(400).json({
-        error: 'Invalid parameters',
+        error: 'Invalid rate params',
         message: 'rateMin must be at least 0 and rateMax cannot exceed 5',
       });
       return;
@@ -69,14 +69,59 @@ const getAllProducts = async (req: Request, res: Response) => {
     filter.rate.$gte = rateMin; // rate >= rateMin
     filter.rate.$lte = rateMax; // rate <= rateMax
 
-    const products = await ProductModel.find(filter)
-    .skip((currentPage - 1) * pageSize)
-    .limit(pageSize);
+    let products;
+    if (pageSize && currentPage) {
+      if (pageSize && pageSize < 1) {
+        res.status(400).json({
+          error: 'Invalid pageSize params',
+          message: 'pageSize must be at least 1',
+        });
+        return;
+      }
+
+      if (currentPage && currentPage < 1) {
+        res.status(400).json({
+          error: 'Invalid currentPage params',
+          message: 'currentPage must be at least 1',
+        });
+        return;
+      }
+
+      if (currentPage > pageSize) {
+        res.status(400).json({
+          error: 'Invalid pagination params',
+          message: 'currentPage must be less than or equal to pageSize',
+        });
+      }
+
+      products = await ProductModel.find(filter)
+        .skip((currentPage - 1) * pageSize)
+        .limit(pageSize);
+    } else {
+      if (pageSize && !currentPage) {
+        res.status(400).json({
+          error: 'Invalid pagination params',
+          message: 'pageSize must be used with page. If you want to get all products, do not use pageSize and page.',
+        });
+        return;
+      }
+
+      if (currentPage && !pageSize) {
+        res.status(400).json({
+          error: 'Invalid pagination params',
+          message: 'page must be used with pageSize. If you want to get all products, do not use pageSize and page.',
+        });
+        return;
+      }
+      products = await ProductModel.find(filter);
+    }
+
+    console.log(filter);
     const count = await ProductModel.countDocuments(filter);
 
     res.status(200).json({
       totalItems: count,
-      totalPages: Math.ceil(count / pageSize),
+      totalPages: pageSize ? Math.ceil(count / pageSize) : null,
       currentPage,
       pageSize,
       results: products,
