@@ -1,7 +1,8 @@
 import express from 'express';
 import cors from 'cors';
 
-import userRouter from './users'
+import authRouter from './auth';
+import userRouter from './users';
 import productRouter from './products';
 
 const router = express.Router();
@@ -14,6 +15,7 @@ router.get('/', (req, res, next) => {
   res.send(`<p>Backend works correct</p>`)
 });
 
+router.use('/api/auth', authRouter)
 router.use('/api/users', userRouter);
 router.use('/api/products', productRouter);
 

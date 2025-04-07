@@ -6,7 +6,10 @@ const roleMiddleware = (requiredRole: UserRole) => {
   return (req: ExpressRequest, res: Response, next: NextFunction) => {
       const userRole = req.user?.role;
       if (userRole !== requiredRole) {
-        res.status(403).send({ error: 'Access denied' });
+        res.status(403).send({
+          error: 'Access denied',
+          message: `You do not have permission to access this resource. Required role: ${requiredRole}, your role: ${userRole}`
+        });
         return;
       }
       next();

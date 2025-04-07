@@ -14,8 +14,7 @@ const getAllProducts = async (req: Request, res: Response) => {
   const subcategory = req.query.subcategory;
   const priceMin = req.query.priceMin ? Number(req.query.priceMin) : null;
   const priceMax = req.query.priceMax ? Number(req.query.priceMax) : null;
-  const rateMin = Number(req.query.rateMin) || 0;
-  const rateMax = Number(req.query.rateMax) || 5;
+  const rate = req.query.rate;
 
   try {
     let filter: any = {};
@@ -58,16 +57,21 @@ const getAllProducts = async (req: Request, res: Response) => {
       if (priceMax !== null) filter.price.$lte = priceMax; // price <= priceMax
     }
 
-    if (rateMin < 0 || rateMax > 5) {
-      res.status(400).json({
-        error: 'Invalid rate params',
-        message: 'rateMin must be at least 0 and rateMax cannot exceed 5',
-      });
-      return;
+    if (rate) {
+      const rateArray = (rate as string).split(',').map((r: string) => Number(r)).sort((a, b) => a - b);
+      if (rateArray.length > 0) {
+        if (rateArray[0] < 0 || rateArray[rateArray.length - 1] > 5) {
+          res.status(400).json({
+            error: 'Invalid rate params',
+            message: 'Rate must be at least 0 and rate cannot exceed 5',
+          });
+          return;
+        }
+      }
+      filter.$expr = {
+        $in: [{ $floor: { $add: ['$rate', 0.5] } }, rateArray]
+      };
     }
-    filter.rate = {};
-    filter.rate.$gte = rateMin; // rate >= rateMin
-    filter.rate.$lte = rateMax; // rate <= rateMax
 
     let products;
     if (pageSize && currentPage) {
@@ -116,7 +120,6 @@ const getAllProducts = async (req: Request, res: Response) => {
       products = await ProductModel.find(filter);
     }
 
-    console.log(filter);
     const count = await ProductModel.countDocuments(filter);
 
     res.status(200).json({
@@ -137,6 +140,7 @@ const getProductById = async (req: Request, res: Response) => {
     if (!product) {
       res.status(404).json({
         error: 'Product not found',
+        message: 'No product found with the specified ID. Please make sure the ID is correct.'
       });
       return;
     }
@@ -170,12 +174,18 @@ const addToFavorites = async (req: ExpressRequest, res: Response) => {
     const product = await ProductModel.findById(productId);
 
     if (!product) {
-      res.status(404).json({ error: 'Product not found' });
+      res.status(404).json({
+        error: 'Product not found',
+        message: 'No product found with the specified ID.',
+      });
       return;
     }
 
     if (product.favorites.includes(userId)) {
-      res.status(400).json({ error: 'Product is in favorites' });
+      res.status(400).json({
+        error: 'Product is in favorites',
+        message: 'This product is already in your favorites.'
+      });
       return;
     }
 
@@ -217,17 +227,23 @@ const getFavoriteProductsByUser = async (req: ExpressRequest, res: Response) => 
 const removeProductFromFavorites = async (req: ExpressRequest, res: Response) => {
   try {
     const userId = req.user?.id;
-    const productId = req.params.productId;
+    const productId = req.query.productId as string;
 
     const product = await ProductModel.findById(productId);
 
     if (!product) {
-      res.status(404).json({ error: 'Product not found' });
+      res.status(404).json({
+        error: 'Product not found',
+        message: 'No product found with the specified ID. Please make sure the ID is correct.'
+      });
       return;
     }
 
     if (!product.favorites.includes(userId)) {
-      res.status(400).json({ error: 'Product is not in favorites' });
+      res.status(400).json({
+        error: 'Product is not in favorites',
+        message: 'This product is not in your favorites.'
+      });
       return;
     }
 
