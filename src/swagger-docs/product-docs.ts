@@ -254,16 +254,8 @@
  *                 type: string
  *                 example: 67c56dfb652b8273b059139e
  *     responses:
- *       200:
- *         description: Product successfully added to favorites
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                 message:
- *                   type: string
- *                   example: Added to favorites
+ *       204:
+ *         description: Product successfully added to favorites (no content returned)
  *       400:
  *         description: Product is already in favorites
  *         content:
@@ -479,15 +471,7 @@
  *         description: The ID of the product to remove from favorites.
  *     responses:
  *       200:
- *         description: Product successfully removed from favorites.
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                 message:
- *                   type: string
- *                   example: Removed from favorites
+ *         description: Product successfully removed from favorites (no content returned)
  *       400:
  *         description: Product is not in favorites.
  *         content:

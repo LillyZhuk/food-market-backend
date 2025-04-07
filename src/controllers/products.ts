@@ -194,7 +194,7 @@ const addToFavorites = async (req: ExpressRequest, res: Response) => {
       { $addToSet: { favorites: userId } }
     );
 
-    res.status(200).json({ message: 'Added to favorites' });
+    res.status(204).end();
   } catch (error) {
     handleErrors(error, res);
   }
@@ -252,7 +252,7 @@ const removeProductFromFavorites = async (req: ExpressRequest, res: Response) =>
       { $pull: { favorites: userId } }
     );
 
-    res.status(200).json({ message: 'Removed from favorites'});
+    res.status(204).end();
   } catch (error) {
     handleErrors(error, res);
   }
