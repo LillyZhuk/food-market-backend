@@ -171,7 +171,8 @@ const addToFavorites = async (req: ExpressRequest, res: Response) => {
     const { productId } = req.body;
     const userId = req.user?.id;
 
-    const product = await ProductModel.findById(productId);
+    const product =
+      await ProductModel.findById(productId).select('+favorites');
 
     if (!product) {
       res.status(404).json({
@@ -206,7 +207,8 @@ const getFavoriteProductsByUser = async (req: ExpressRequest, res: Response) => 
   try {
     const filter = { favorites: req.user?.id };
 
-    const products = await ProductModel.find(filter)
+    const products =
+      await ProductModel.find(filter).select('+favorites')
       .skip((currentPage - 1) * pageSize)
       .limit(pageSize);
 
@@ -229,7 +231,8 @@ const removeProductFromFavorites = async (req: ExpressRequest, res: Response) =>
     const userId = req.user?.id;
     const productId = req.query.productId as string;
 
-    const product = await ProductModel.findById(productId);
+    const product =
+      await ProductModel.findById(productId).select('+favorites');
 
     if (!product) {
       res.status(404).json({
